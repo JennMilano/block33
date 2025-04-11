@@ -125,17 +125,17 @@ const init = async () => {
     console.log("Tables created");
 
     SQL = ` 
-    INSERT INTO department(name) VALUES ('Sales');
-    INSERT INTO department(name) VALUES ('Marketing');
-    INSERT INTO department(name) VALUES ('Engineering');
-    INSERT INTO department(name) VALUES ('Design');
-    INSERT INTO department(name) VALUES ('Finance');
+    INSERT INTO department(name) VALUES ('Management');
+    INSERT INTO department(name) VALUES ('Coaching');
+    INSERT INTO department(name) VALUES ('Tight Ends');
+    INSERT INTO department(name) VALUES ('Linebackers');
+    INSERT INTO department(name) VALUES ('Safety');
 
-    INSERT INTO employee(name, department_id) VALUES ('Eric DeCosta', (SELECT id FROM department WHERE name = 'Sales'));
-    INSERT INTO employee(name, department_id) VALUES ('John Harbaugh', (SELECT id FROM department WHERE name = 'Marketing'));
-    INSERT INTO employee(name, department_id) VALUES ('Dennis Pitta', (SELECT id FROM department WHERE name = 'Engineering'));
-    INSERT INTO employee(name, department_id) VALUES ('Ray Lewis', (SELECT id FROM department WHERE name = 'Design'));
-    INSERT INTO employee(name, department_id) VALUES ('Ed Reed', (SELECT id FROM department WHERE name = 'Finance'));
+    INSERT INTO employee(name, department_id) VALUES ('Eric DeCosta', (SELECT id FROM department WHERE name = 'Management'));
+    INSERT INTO employee(name, department_id) VALUES ('John Harbaugh', (SELECT id FROM department WHERE name = 'Coaching'));
+    INSERT INTO employee(name, department_id) VALUES ('Dennis Pitta', (SELECT id FROM department WHERE name = 'Tight Ends'));
+    INSERT INTO employee(name, department_id) VALUES ('Ray Lewis', (SELECT id FROM department WHERE name = 'Linebackers'));
+    INSERT INTO employee(name, department_id) VALUES ('Ed Reed', (SELECT id FROM department WHERE name = 'Safety'));
     `;
     console.log('Seeding data...');
     await client.query(SQL);
